@@ -46,8 +46,7 @@ void test_picture()
     double total_time = (double)(finish_time - start_time) / CLOCKS_PER_SEC;
     std::cout << "time" << total_time * 1000 << "ms" << std::endl;
     
-    cv::imshow("face_detection", image);
-	cv::imwrite("result_sample.jpg", image);
+    cv::imshow("face_detection", image);	
     cv::waitKey(0);
 }
 
