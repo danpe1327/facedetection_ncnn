@@ -8,12 +8,12 @@ void test_picture()
     const char *model_path = "models";
     MTCNN mtcnn(model_path);
     VanFace vanface(model_path);
-    
+
     cv::Mat image;
     image = cv::imread("sample.jpg");
     ncnn::Mat ncnn_img = ncnn::Mat::from_pixels(image.data, ncnn::Mat::PIXEL_BGR2RGB, image.cols, image.rows);
-	
-	clock_t start_time = clock();
+
+    clock_t start_time = clock();
 
     std::vector<Bbox> finalBbox;
     mtcnn.detect(ncnn_img, finalBbox);
@@ -45,8 +45,8 @@ void test_picture()
     clock_t finish_time = clock();
     double total_time = (double)(finish_time - start_time) / CLOCKS_PER_SEC;
     std::cout << "time" << total_time * 1000 << "ms" << std::endl;
-    
-    cv::imshow("face_detection", image);	
+
+    cv::imshow("face_detection", image);
     cv::waitKey(0);
 }
 

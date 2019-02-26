@@ -11,20 +11,20 @@
 
 class VanFace {
 public:
-	VanFace(const std::string &model_path);
-	VanFace(const std::string param_files, const std::string bin_files);
-	~VanFace();	
+    VanFace(const std::string& model_path);
+    VanFace(const std::string param_files, const std::string bin_files);
+    ~VanFace();
 
-	void detectLandmark(cv::Mat& img_, std::vector<Bbox>& faceBbox, std::vector<std::vector<cv::Point>>& outLandmarks);
-	
+    void detectLandmark(cv::Mat& img_, std::vector<Bbox>& faceBbox, std::vector<std::vector<cv::Point>>& outLandmarks);
+
 protected:
-	void getSenseBbox(std::vector<Bbox>& faceBbox, int imgHeight, int imgWidth, std::vector<cv::Rect>& senseBbox);
+    void getSenseBbox(std::vector<Bbox>& faceBbox, int imgHeight, int imgWidth, std::vector<cv::Rect>& senseBbox);
 
-	ncnn::Net vanFaceNet;
-	cv::Mat img;
+    ncnn::Net vanFaceNet;
+    cv::Mat img;
 private:
-	cv::Size netSize = cv::Size(60, 60);
-	int num_threads = 1;
+    cv::Size netSize = cv::Size(60, 60);
+    int num_threads = 1;
 };
 
 
