@@ -61,4 +61,4 @@ python .\mtcnn_hw.py .\caffe_models\det3.caffemodel .\caffe_models\det3.prototxt
 
 生成正确的 ncnn 模型后，建立vs工程进行调试，可以vs新建工程。然后，添加包含目录（ncnn 和 opencv 的头文件）和库目录，接着在链接器里添加两者的lib库引用。MTCNN 的检测代码来自于 https://github.com/moli232777144/mtcnn_ncnn ，VanFace 的代码主要参考作者的检测代码。
 附上最终的检测效果：
-![](https://raw.githubusercontent.com/Tencent/ncnn/master/images/result_sample.jpg)
+![](https://github.com/danpe1327/facedetection_ncnn/blob/master/images/result_sample.jpg)
